@@ -9,7 +9,7 @@
  */
 angular.module('internetsistemasViewApp')
 .factory('ClassroomsService', function($resource) {
-  return $resource('http://localhost:3000/api/classrooms/:id.json', null,{
+  return $resource(process.env.BACK_END_URL + '/api/classrooms/:id.json', null,{
         'update': { method:'PUT' }
     });
 });
