@@ -24,6 +24,10 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/classrooms/new', {
+        templateUrl: 'views/classrooms/new.html',
+        controller: 'ClassroomsNewController',
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
