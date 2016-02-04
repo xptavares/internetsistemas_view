@@ -8,8 +8,8 @@
  * Controller of the internetsistemasViewApp
  */
 angular.module('internetsistemasViewApp')
-.factory('StudentsService', function($resource) {
-  return $resource(process.env.BACK_END_URL + '/api/students/:id.json', null, {
+.factory('StudentsService', function($resource, configuration) {
+  return $resource(configuration.url + '/api/students/:id.json', null, {
         'update': { method:'PUT' }
     });
 });

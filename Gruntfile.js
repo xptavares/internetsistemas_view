@@ -28,6 +28,8 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  grunt.loadNpmTasks('grunt-replace');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -331,6 +333,49 @@ module.exports = function (grunt) {
     // concat: {
     //   dist: {}
     // },
+    replace: {
+      development: {
+        options: {
+          patterns: [{
+            json: grunt.file.readJSON('./config/environments/development.json')
+          }]
+        },
+        files: [{
+          expand: true,
+          flatten: true,
+          src: ['./config/config.js'],
+          dest: '<%= yeoman.app %>/scripts/services/'
+        }]
+      },
+
+      staging: {
+        options: {
+          patterns: [{
+            json: grunt.file.readJSON('./config/environments/staging.json')
+          }]
+        },
+        files: [{
+          expand: true,
+          flatten: true,
+          src: ['./config/config.js'],
+          dest: '<%= yeoman.app %>/scripts/services/'
+        }]
+      },
+
+      production: {
+        options: {
+          patterns: [{
+            json: grunt.file.readJSON('./config/environments/production.json')
+          }]
+        },
+        files: [{
+          expand: true,
+          flatten: true,
+          src: ['./config/config.js'],
+          dest: '<%= yeoman.app %>/scripts/services/'
+        }]
+      }
+    },
 
     imagemin: {
       dist: {
@@ -474,6 +519,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'postcss:server',
       'connect:livereload',
+      'replace:development',
       'watch'
     ]);
   });
@@ -515,5 +561,13 @@ module.exports = function (grunt) {
     'newer:jscs',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('staging', [
+    'replace:staging'
+  ]);
+
+  grunt.registerTask('production', [
+    'replace:production'
   ]);
 };
