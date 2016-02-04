@@ -23,7 +23,7 @@
      $scope.loadStudents();
    })
    .controller('StudentsShowCtrl', function ($scope, $routeParams, StudentsService) {
-     $scope.students = StudentsService.get({ id: $routeParams.id });
+     $scope.student = StudentsService.get({ id: $routeParams.id });
    })
    .controller('StudentsNewController', function($scope, $location, StudentsService) {
      $scope.student = {};
