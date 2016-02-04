@@ -36,6 +36,8 @@
   "dependencies": {
     "express": "^4.13.4",
     "gzippo": "^0.2.0",
+    "load-grunt-tasks": "^3.4.0",
+    "logfmt": "^1.2.0",
     "morgan": "^1.6.1"
   }
 }
