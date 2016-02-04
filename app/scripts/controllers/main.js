@@ -8,18 +8,16 @@
  * Controller of the internetsistemasViewApp
  */
 angular.module('internetsistemasViewApp')
-  .controller('MainCtrl', function ($scope, ClassroomsService) {
+  .controller('MainCtrl', function ($scope, $location, ClassroomsService) {
     $scope.loadClassrooms = function() {
       var classrooms = ClassroomsService.query(function() {
         $scope.classrooms = classrooms;
-        console.log(classrooms);
       });
     };
     $scope.loadClassrooms();
     $scope.deleteClassroom = function(classroom) {
-      students.$remove({id: classroom.id}, function() {
-        $location.path( '/students' );
-        $scope.loadStudents();
+      classroom.$remove({id: classroom.id}, function() {
+        $scope.loadClassrooms();
       });
     };
   })
@@ -37,6 +35,7 @@ angular.module('internetsistemasViewApp')
     };
     $scope.loadStudents();
     $scope.loadCourses();
+    $scope.time = null; //datetimepicker problem
     $scope.addClassroom = function() {
       new ClassroomsService({classroom: $scope.classroom }).$save(function() {
         $location.path( '/' );
