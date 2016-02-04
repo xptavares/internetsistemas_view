@@ -32,15 +32,16 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">internetsistemasView</a>
+            <a class="navbar-brand" href="#/">Internetsistemas</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
+              <li class="active"><a href="#/">Matricula</a></li>
+              <li><a ng-href="#/students">Students</a></li>
+              <li><a ng-href="#/courses">Courses</a></li>
               <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -88,6 +89,11 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/courses.js"></script>
+        <script src="scripts/controllers/students.js"></script>
+        <script src="scripts/services/classroomsService.js"></script>
+        <script src="scripts/services/studentsService.js"></script>
+        <script src="scripts/services/coursesService.js"></script>
         <!-- endbuild -->
 </body>
 </html>

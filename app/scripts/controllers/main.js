@@ -8,10 +8,6 @@
  * Controller of the internetsistemasViewApp
  */
 angular.module('internetsistemasViewApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, ClassroomsService) {
+
   });
