@@ -1,7 +1,3 @@
-<div class="page-header">
-  <h1>Course</h1>
-</div>
-
 <dl class="dl-horizontal">
   <dt><strong>name:</strong></dt>
   <dd>{{course.name}}</dd>
@@ -10,3 +6,6 @@
   <dt><strong>status:</strong></dt>
   <dd>{{course.status}}</dd>
 </dl>
+
+<a href="#/courses" class="btn btn-default">Cancel</a>
+<a href="#/courses/{{course.id}}/edit" class="btn btn-primary">Edit</a>
